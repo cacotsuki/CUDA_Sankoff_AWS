@@ -10,7 +10,7 @@ def abre_arquivo():
     seq_mid = []
     hamb = []
     lista = []
-    with open('/home/ubuntu/cudasankoff_ec2/cudasankoff/teste.txt') as file:
+    with open('/home/ubuntu/cuda_sankoff/CUDA_Sankoff_AWS/teste.txt') as file:
         for line in file:
             hamb.append(line)
     lista.append(hamb[4])
@@ -69,7 +69,7 @@ def get_exec_time():
     ex = []
     exec_time = []
     exec_limpo = []
-    with open('/home/ubuntu/cudasankoff_ec2/cudasankoff/teste.txt') as file:
+    with open('/home/ubuntu/cuda_sankoff/CUDA_Sankoff_AWS/teste.txt') as file:
         for line in file:
             ex.append(line)
     exec_time = ex[8]
