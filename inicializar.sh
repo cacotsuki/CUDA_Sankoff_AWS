@@ -1,4 +1,1 @@
-sudo apt-get update ; sudo apt-get upgrade ; sudo apt-get install python3-pip ; mkdir cuda_sankoff ; cd cuda_sankoff ; git clone https://github.com/cacotsuki/CUDA_Sankoff_AWS.git ; cd CUDA_Sankoff_AWS/ferramenta_django ; pip3 install virtualenv==20.0.23 ;
-virtualenv venv ; source venv/bin/activate ; pip3 install -r requirements.txt
-
-
+sudo apt-get update ; sudo apt-get upgrade ; sudo apt-get install python3-pip ; mkdir ferramenta_cuda_sankoff ; cd ferramenta_cuda_sankoff ; git clone https://github.com/cacotsuki/CUDA_Sankoff_AWS.git ; git clone https://www.github.com/danielsundfeld/cuda_sankoff ; cd cuda_sankoff ; wget https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_3_x/ViennaRNA-2.3.3.tar.gz ; tar xf ViennaRNA-2.3.3.tar.gz ; cd ViennaRNA-2.3.3 ; autoreconf -f -i && ./configure && make ; cd .. ; make ; cd .. ; cd ferramenta_cuda_sankoff ; pip3 install virtualenv==20.0.23 ; virtualenv venv ; source venv/bin/activate ; pip3 install -r requirements.txt ;
