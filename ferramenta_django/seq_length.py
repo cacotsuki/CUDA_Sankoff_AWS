@@ -2,7 +2,7 @@ def seq_len(qual_seq):
     #converte()
     fasta = []
     seq = []
-    with open('/home/ubuntu/cuda_sankoff/CUDA_Sankoff_AWS/danielsundfeld-hpc/seqs/write2.fasta') as file:
+    with open('/home/ubuntu/ferramenta_cuda_sankoff/cuda_sankoff/seqs/write2.fasta') as file:
         for line in file:
             fasta.append(line)
 

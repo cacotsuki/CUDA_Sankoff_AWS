@@ -18,8 +18,8 @@ from Bio.SeqUtils import GC
 # Segundo argumento e o mesmo segundo argumento do terminal para compilar
 # Escreve no teste.txt a saida do algoritmo
 def linux():
-    subprocess.check_output(['dos2unix', 'write2.fasta'], cwd='/home/ubuntu/cuda_sankoff/CUDA_Sankoff_AWS/danielsundfeld-hpc/seqs' )
-    a = subprocess.check_output(['./bin/sankoff', 'seqs/write2.fasta'], cwd='/home/ubuntu/cuda_sankoff/CUDA_Sankoff_AWS/danielsundfeld-hpc')
+    subprocess.check_output(['dos2unix', 'write2.fasta'], cwd='/home/ubuntu/ferramenta_cuda_sankoff/cuda_sankoff/seqs' )
+    a = subprocess.check_output(['./bin/sankoff', 'seqs/write2.fasta'], cwd='/home/ubuntu/ferramenta_cuda_sankoff/cuda_sankoff')
     str(a,'utf-8')
 
     file = open('teste.txt', 'w')
@@ -29,7 +29,7 @@ def linux():
 
 # Grava num .fasta o que foi a entrada texto da home
 def write_sequence(text_area):
-    wrt = open('/home/ubuntu/cuda_sankoff/CUDA_Sankoff_AWS/danielsundfeld-hpc/seqs/write2.fasta', 'w')
+    wrt = open('/home/ubuntu/ferramenta_cuda_sankoff/cuda_sankoff/seqs/write2.fasta', 'w')
 
     wrt.write(str(text_area))
     wrt.close()
@@ -37,7 +37,7 @@ def write_sequence(text_area):
 # Realiza a leitura do .fasta o que foi a entrada texto da home
 def read_sequence():
     #arch = open('/home/livanski/Documents/danielsundfeld-hpc/seqs/write.fasta','r')
-    with open('/home/ubuntu/cuda_sankoff/CUDA_Sankoff_AWS/danielsundfeld-hpc/seqs/write2.fasta') as file:
+    with open('/home/ubuntu/ferramenta_cuda_sankoff/cuda_sankoff/seqs/write2.fasta') as file:
         for line in file:
             line.split('\n')
 
@@ -45,7 +45,7 @@ def remove_barra():
     hamb = []
     novo = []
 
-    with open('/home/ubuntu/cuda/danielsundfeld-hpc/seqs/write.fasta') as file:
+    with open('/home/ubuntu/ferramenta_cuda_sankoff/cuda_sankoff/seqs/write2.fasta') as file:
         for line in file:
             hamb.append(line)
 
@@ -57,7 +57,7 @@ def remove_barra():
 
 #novo é a lista com o fasta limpo
     a = "".join(novo)
-    wrt = open('/home/ubuntu/cuda/danielsundfeld-hpc/seqs/write2.fasta', 'w')
+    wrt = open('/home/ubuntu/ferramenta_cuda_sankoff/cuda_sankoff/seqs/write2.fasta', 'w')
     wrt.write(a)
 
 
@@ -71,7 +71,7 @@ def create_file():
 def read_file():
    # subprocess.check_output(['dos2unix', 'write.fasta'], cwd='/home/livanski/Documents/danielsundfeld-hpc/seqs')
     #ler = open('teste.txt', 'r')
-    ler = open('/home/ubuntu/cuda_sankoff/CUDA_Sankoff_AWS/danielsundfeld-hpc/seqs/write2.fasta','r')
+    ler = open('/home/ubuntu/ferramenta_cuda_sankoff/cuda_sankoff/seqs/write2.fasta','r')
     read = ler.readline()
     return read
 
@@ -85,7 +85,7 @@ def manipulate_txt():
     #     for line in file:
     #         tst.append(line)
     #
-    meuArquivo = open('teste.txt', 'r')
+    meuArquivo = open('resultado_cuda_sankoff.txt', 'r')
     saida_sankoff = meuArquivo.readlines()
 
     for index in range(len(saida_sankoff)):
@@ -106,7 +106,7 @@ def data_visualization():
     hamb = []
     #subprocess.check_output(['dos2unix', 'write.fasta'], cwd='/home/livanski/Documents/danielsundfeld-hpc/seqs')
     #with open("teste.txt") as file:
-    with open('/home/ubuntu/cuda_sankoff/CUDA_Sankoff_AWS/danielsundfeld-hpc/seqs/write2.fasta') as file:
+    with open('/home/ubuntu/ferramenta_cuda_sankoff/cuda_sankoff/seqs/write2.fasta') as file:
         for line in file:
             hamb.append(line)
 
@@ -124,7 +124,7 @@ def data_visualization():
     pylab.xlabel('GC: %0.1f\nAT: %01.f' % (gc, au))  # porcentagens/info
      # exibe
     #pylab.savefig('/home/livanski/Pictures/graph.png', dpi=100)
-    pylab.savefig('/home/ubuntu/cuda_sankoff/CUDA_Sankoff_AWS/app/templates/static/graph.png', dpi=100)
+    pylab.savefig('/home/ubuntu/ferramenta_cuda_sankoff/CUDA_Sankoff_AWS/ferramenta_django/app/templates/static/graph.png', dpi=100)
     return pylab.show
 
 
